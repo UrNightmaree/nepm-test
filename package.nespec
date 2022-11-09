@@ -1,0 +1,24 @@
+-- Concept for package spec file (git, svn)
+
+nelua = ">= 1.0" -- Syntax: "(cond) (version)" e.g "== 0.1"
+
+local gh_pref = "github.com" -- Taken from Luarocks' .rockspec config
+
+dependencies = {
+	gh_pref.."/UrNightmaree/nhttp >= 1.3" -- Same as global "nelua" variable
+	-- Syntax: "(package) (cond) (version)"
+}
+
+-- Pretty much same as .rockspec from Luarocks
+build = {
+	type = "builtin",
+	module = {
+		["module"] = "module.nelua"
+	},
+	bin = {
+		["binfile"] = "bin.nelua"
+	},
+	doc = {
+		["docs"] = "docs.txt"
+	}
+}
